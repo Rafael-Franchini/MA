@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class empresaDAO implements database{
 
-    static private ArrayList<Empresa> db = new ArrayList<>();
+    static private final ArrayList<Empresa> db = new ArrayList<>();
     static private empresaDAO instancia = null;
 
     //Construtor de um singleton é privado!

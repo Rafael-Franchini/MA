@@ -32,6 +32,7 @@ public class EmpresaControler {
         System.out.println("Nome: " + e.getNome());
         System.out.println("Descricao: " + e.getDescricao());
         System.out.println("Total funcionarios: " + e.getTotalFuncionarios());
+         e.imprime();
     }
     public static void deleteEmpresa(String nome) {
         database db = empresaDAO.getInstancia();
@@ -55,5 +56,27 @@ public class EmpresaControler {
         db.update(e);
 
         System.out.println("Empresa atualizada com sucesso!");
+    }
+    public static void contratarFuncionario(String nome) {
+        database db = empresaDAO.getInstancia();
+
+        Empresa e = db.get(nome);
+
+        e.contratarFuncionario();
+
+        db.update(e);
+
+        System.out.println("Funcionario contratado com sucesso!");
+    }
+    public static void demitirFuncionario(String nome) {
+        database db = empresaDAO.getInstancia();
+
+        Empresa e = db.get(nome);
+
+        e.demitirFuncionario();
+
+        db.update(e);
+
+        System.out.println("Funcionario demitido com sucesso!");
     }
 }

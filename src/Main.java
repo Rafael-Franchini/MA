@@ -11,12 +11,12 @@ public class Main {
         System.out.println("5. Sair");
     }
     public static void main(String[] args) {
-        int op=0;
+        int op;
         String nomeEmpresa, descricaoEmpresa;
         int totalFuncionarios;
         Scanner input = new Scanner(System.in);
         boolean exit = false;
-        while(exit == false){
+        while(!exit){
             menu();
             op=input.nextInt();
             input.nextLine();
